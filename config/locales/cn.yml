@@ -1,0 +1,14 @@
+# Sample localization file for English. Add more files in this directory for other locales.
+# See https://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
+
+cn:
+  hello:              "你好"
+  tab_dashboard:      "Home"
+  tab_tasks:          "tasks"
+  tab_campaigns:      "campaigns"
+  tab_leads:          "leads"
+  tab_accounts:       "accounts"
+  tab_contacts:       "contacts"
+  tab_opportunities:  "opportunities"
+  tab_meetings:       "meetings"
+  

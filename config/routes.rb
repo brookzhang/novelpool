@@ -1,58 +1,52 @@
 Novelpool::Application.routes.draw do
-  # The priority is based upon order of creation:
-  # first created -> highest priority.
+  get "pages/category"
 
-  # Sample of regular route:
-  #   match 'products/:id' => 'catalog#view'
-  # Keep in mind you can assign values other than :controller and :action
+  get "pages/contact"
 
-  # Sample of named route:
-  #   match 'products/:id/purchase' => 'catalog#purchase', :as => :purchase
-  # This route can be invoked with purchase_url(:id => product.id)
+  get "pages/home"
 
-  # Sample resource route (maps HTTP verbs to controller actions automatically):
-  #   resources :products
+  get "pages/toplist"
 
-  # Sample resource route with options:
-  #   resources :products do
-  #     member do
-  #       get 'short'
-  #       post 'toggle'
-  #     end
-  #
-  #     collection do
-  #       get 'sold'
-  #     end
-  #   end
+  get "pages/about"
 
-  # Sample resource route with sub-resources:
-  #   resources :products do
-  #     resources :comments, :sales
-  #     resource :seller
-  #   end
+  get "pages/help"
 
-  # Sample resource route with more complex sub-resources
-  #   resources :products do
-  #     resources :comments
-  #     resources :sales do
-  #       get 'recent', :on => :collection
-  #     end
-  #   end
+  namespace 'maintain' do
+    resource :session
+    resources :comments,:categories,:users,:books
+    resources :books do
+      resources :chapters
+    end
+    
+    match '/dashboard',:to=> 'dashboard#show'
+    match '/user_info',:to=> 'user_info#show'
+    match '/user_info/edit',:to=> 'user_info#edit'
+    match '/user_info/update',:to=> 'user_info#update'
+    match '/author_info',:to=> 'author_info#show'
+    match '/author_info/edit',:to=> 'author_info#edit'
+    match '/author_info/update',:to=> 'author_info#update'
+    
+    root :to => 'dashboard#show'
+  end
+  
 
-  # Sample resource route within a namespace:
-  #   namespace :admin do
-  #     # Directs /admin/products/* to Admin::ProductsController
-  #     # (app/controllers/admin/products_controller.rb)
-  #     resources :products
-  #   end
+  get "sessions/new"
+  
+  resources :sessions , :only =>[:new,:create,:destroy]
+  resources :microposts,:only=>[:create,:destroy]
+  resources :relationships, :only =>[:create , :destroy]
+  resources :users,:categories 
+  resource :user
+  resources :books do
+    resources :chapters
+  end
 
-  # You can have the root of your site routed with "root"
-  # just remember to delete public/index.html.
-  # root :to => 'welcome#index'
-
-  # See how all your routes lay out with "rake routes"
-
-  # This is a legacy wild controller route that's not recommended for RESTful applications.
-  # Note: This route will make all actions in every controller accessible via GET requests.
-  # match ':controller(/:action(/:id))(.:format)'
+  match '/toplist',:to=> 'pages#toplist'
+  match '/about',:to=>'pages#about'
+  match '/help',:to=>'pages#help'
+  match '/signup',:to=>'users#new'
+  match '/signin',:to => 'sessions#show'
+  match '/signout', :to=>'sessions#destroy'
+  
+  root :to=>'pages#home'
 end

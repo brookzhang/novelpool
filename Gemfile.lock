@@ -42,6 +42,7 @@ GEM
     erubis (2.7.0)
     execjs (1.2.13)
       multi_json (~> 1.0)
+    haml (3.1.4)
     hike (1.2.1)
     i18n (0.6.0)
     journey (1.0.0.rc1)
@@ -71,6 +72,8 @@ GEM
       activesupport (= 3.2.0.rc1)
       bundler (~> 1.0)
       railties (= 3.2.0.rc1)
+    rails3-generators (0.17.4)
+      railties (>= 3.0.0)
     railties (3.2.0.rc1)
       actionpack (= 3.2.0.rc1)
       activesupport (= 3.2.0.rc1)
@@ -106,8 +109,10 @@ PLATFORMS
 
 DEPENDENCIES
   coffee-rails (~> 3.2.0)
+  haml
   jquery-rails
   rails (= 3.2.0.rc1)
+  rails3-generators
   sass-rails (~> 3.2.0)
   sqlite3
   uglifier (>= 1.0.3)
