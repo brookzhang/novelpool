@@ -3,12 +3,23 @@
 
 cn:
   hello:              "你好"
-  tab_dashboard:      "Home"
-  tab_tasks:          "tasks"
-  tab_campaigns:      "campaigns"
-  tab_leads:          "leads"
-  tab_accounts:       "accounts"
-  tab_contacts:       "contacts"
-  tab_opportunities:  "opportunities"
-  tab_meetings:       "meetings"
+  tab_home:           "Home"
+  tab_toplist:        "TopList"
+  tab_novel:          "小说"
+  tab_zhouyi:         "易"
+  tab_zhongyi:        "医"
+  tab_comments:       "评论"
+  tab_others:         "others"
   
+  
+  
+  # Views -> Common.
+  #----------------------------------------------------------------------------
+  login:              "登录"
+  sign_up:            "注册"
+  about:              "关于"
+  search_assets:      "查找 %{value}"
+  search_type:        "查询内容"
+  about_ffc_version:  "版本信息"
+  about_thank_you:    "感谢"
+  about_ffc_resources: "来源"

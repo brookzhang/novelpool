@@ -16,16 +16,15 @@ rails destroy controller Pages
 rails g controller Pages home toplist about help
 # edit routes
 
-config.generators do |g|
-  g.template_engine :haml
-end   
 
+ge
 
+git config branch.master.remote origin
+git config branch.master.merge refs/heads/master
 
-
-
-
-
+git branch -m master development 
+git branch -m published master 
+git push origin master 
 
 
 

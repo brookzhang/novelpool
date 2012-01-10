@@ -1,14 +1,13 @@
 module ApplicationHelper
   
   def tabs(tabs = nil)
-    tabs = [{ :active => true,:text => :tab_dashboard,:url => { :controller => "home"           } },
-              { :active => false, :text => :tab_tasks,         :url => { :controller => "tasks"          } },
-              { :active => false, :text => :tab_campaigns,     :url => { :controller => "campaigns"      } },
-              { :active => false, :text => :tab_leads,         :url => { :controller => "leads"          } },
-              { :active => false, :text => :tab_accounts,      :url => { :controller => "accounts"       } },
-              { :active => false, :text => :tab_contacts,      :url => { :controller => "contacts"       } },
-              { :active => false, :text => :tab_opportunities, :url => { :controller => "opportunities"  } },
-              { :active => false, :text => :tab_meetings,      :url => { :controller => "meetings"        } }
+    tabs = [{ :active => true,:text => :tab_home,:url => { :controller => "home"           } },
+              { :active => false, :text => :tab_toplist,         :url => { :controller => "toplist"          } },
+              { :active => false, :text => :tab_novel,     :url => { :controller => "novels"      } },
+              { :active => false, :text => :tab_zhouyi,         :url => { :controller => "zhouyis"          } },
+              { :active => false, :text => :tab_zhongyi,      :url => { :controller => "zhongyis"       } },
+              { :active => false, :text => :tab_comments,      :url => { :controller => "comments"       } },
+              { :active => false, :text => :tab_others, :url => { :controller => "others"  } }
             ]
   end
   
