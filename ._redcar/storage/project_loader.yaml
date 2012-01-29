@@ -1,0 +1,4 @@
+--- 
+open_files: 
+  - Gemfile
+  - app/controllers/application_controller.rb

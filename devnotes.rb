@@ -16,9 +16,6 @@ rails destroy controller Pages
 rails g controller Pages home toplist about help
 # edit routes
 
-
-ge
-
 git config branch.master.remote origin
 git config branch.master.merge refs/heads/master
 
@@ -26,7 +23,15 @@ git branch -m master development
 git branch -m published master 
 git push origin master 
 
+#insert test data
+rails g model User
+rails c
+user = User.new
+user.email="brook@brook.com"
+......
+user.save
 
+rails g migration AlterAuthorOfBook
 
 
 #========================================================== user from 20110714 to 20110914
@@ -43,7 +48,7 @@ description           nvarchar(500)
 reader_score          integer     comment+10,post+1
 maxfavorite           integer     default=10 ,消耗积分,增加额度
 maxbook               integer     最多可以創建的book數量,默認10,向admin申请增加 (默认值直接写在user表里不好,以后改为全局设定,这里只保存超出的值)
-admin                 boolea      administrators,
+admin                 boolean     administrators,
 maintainer            boolean     可添加非原著书,不受maxbook限制
 author                boolean     可以同时是 admin ,maintainer,author.  author&maintainer使用同一后台,只是可以改作者名
 author_name           nvarchar(50)
@@ -91,13 +96,19 @@ title                 nvarchar(50)
 description           nvarchar(500)
 keywords              nvarchar(50)
 cover_picture_url     varchar(100)
-author                boolean 只有maintainer可以单独设定,其他自动关联users.author_name
+#author_name           nvarchar(50) = user.author_name
 status                tinyint 0-ongoing 1-end 2-pending
 all_click             int
 month_click           int
 week_click            int
 day_click             int
 last_click_at         datetime  
+
+#[writers] cooperative writer --will establish next step
+#id
+#book_id
+#user_id
+
 
 #[sections]   分卷
 id                    int

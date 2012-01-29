@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20111220094134) do
+ActiveRecord::Schema.define(:version => 20120129095115) do
 
   create_table "books", :force => true do |t|
     t.integer  "category_id"
@@ -20,15 +20,14 @@ ActiveRecord::Schema.define(:version => 20111220094134) do
     t.string   "description"
     t.string   "keywords"
     t.string   "cover_picture_url"
-    t.boolean  "author",            :default => false
     t.integer  "status",            :default => 0
     t.integer  "all_click",         :default => 0
     t.integer  "month_click",       :default => 0
     t.integer  "week_click",        :default => 0
     t.integer  "day_click",         :default => 0
     t.datetime "last_click_at"
-    t.datetime "created_at",                           :null => false
-    t.datetime "updated_at",                           :null => false
+    t.datetime "created_at",                       :null => false
+    t.datetime "updated_at",                       :null => false
   end
 
   add_index "books", ["category_id"], :name => "index_books_on_category_id"
